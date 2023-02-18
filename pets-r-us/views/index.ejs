@@ -1,0 +1,103 @@
+<!-- ============================================
+; Title:  index.js
+; Author: Professor Krasso
+; Date:   05 February 2023
+; Description: Pets-R-Us dog grooming app
+;=========================================== -->
+
+<head>
+    <meta charset="UTF-8">
+    <title>
+        <%= title %>
+    </title>
+
+    <link rel="stylesheet" href="/styles/site.css">
+
+    <!-- Google fonts for Oswald -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/7e85f88570.js" crossorigin="anonymous"></script>
+
+</head>
+
+<div class="landing" id="htmlbody">
+    <%- include('./partials/_header.ejs') %>
+
+        <main>
+            <div class="main-container">
+                <div class="main-page-text-container"></div>
+                <div class="main-page-text">
+                    <div class="IntroTxt" id="IntroTxt">
+                        <div class="IntroName bolder" id="main-bold-text">
+                            <h1>A pet-first <br /> approach to wellness</h1>
+                        </div>
+                        <h5 class="Into-Desc">Welcome to our dog grooming service! We offer professional and
+                            caring
+                            grooming services for your furry friend. From baths and haircuts to nail trims and
+                            ear
+                            cleaning, our experienced groomers will make sure your dog looks and feels their
+                            best.
+                            Schedule an appointment today and treat your furry companion to a spa
+                            day.<span>.</span>
+                        </h5>
+                        <div class="appointment-box">
+                            <input placeholder="Schedule here.." id="appointment-input" />
+                            <button class="projectBtn" href="">Schedule</button>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="main-page-image">
+
+                </div>
+            </div>
+
+        </main>
+
+        <div class="landing-feature-container">
+            <h1 class="service-hader">-- Our Services --</h1>
+            <ul class="card-wrapper">
+                <li class="card">
+                    <img src='../images/dog_3.png' alt=''>
+                    <h3><a href="">Basic Grooming</a></h3>
+                    <p>A comprehensive grooming service that includes bathing, brushing, and hair trimming.</p>
+                </li>
+                <li class="card">
+                    <img src='../images/dog_4.png' alt=''>
+                    <h3><a href="">Fur Trimming</a></h3>
+                    <p> A service that focuses on trimming and shaping your dog's fur to enhance its appearance.
+                    </p>
+                </li>
+                <li class="card">
+                    <img src='../images/dog_5.png' alt=''>
+                    <h3><a href=""> Nail Trimming:</a></h3>
+                    <p>A service that involves cutting and filing your dog's nails to keep them at a healthy
+                        length.</p>
+                </li>
+                <li class="card">
+                    <img src='../images/dog_7.png' alt=''>
+                    <h3><a href="">Ear Cleaning:</a></h3>
+                    <p>A service that involves cleaning your dog's ears to prevent infections and other ear
+                        problems.
+                    </p>
+                </li>
+                <li class="card">
+                    <img src='../images/dog_4.png' alt=''>
+                    <h3><a href="">Teeth Brushing</a></h3>
+                    <p> A service that helps maintain your dog's dental hygiene by cleaning its teeth and
+                        removing
+                        plaque.</p>
+                </li>
+                <li class="card">
+                    <img src='../images/dog_6.png' alt=''>
+                    <h3><a href="">Spa Packages</a></h3>
+                    <p>A customizable package of grooming services that includes a combination of the above
+                        services,
+                        plus pampering treatments like massages and aromatherapy.</p>
+                </li>
+            </ul>
+        </div>
+
+        <%- include('./partials/_footer.ejs') %>
+</div>

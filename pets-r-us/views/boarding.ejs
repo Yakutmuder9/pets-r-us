@@ -1,0 +1,171 @@
+<!-- ============================================
+; Title:  index.js
+; Author: Professor Krasso
+; Date:   05 February 2023
+; Description: Pets-R-Us dog grooming app
+;=========================================== -->
+
+<head>
+    <meta charset="UTF-8">
+    <title>
+        <%= title %>
+    </title>
+
+    <link rel="stylesheet" href="/styles/site.css">
+
+    <!-- Google fonts for Oswald -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/7e85f88570.js" crossorigin="anonymous"></script>
+
+</head>
+
+<div class="landing" id="bording">
+    <%- include('./partials/_header.ejs') %>
+
+    <main class="wrapper" id="traning">
+        <section class="section-form">
+          <h1>Grooming</h1>
+          <p>
+            Accessible and user-friendly HTML5 form validation library.<br>
+            <a href="#" target="_blank">GitHub Repo</a> - <a href="#" target="_blank">Tweet!</a>
+          </p>
+      
+          <form name="signup" class="form" novalidate>
+            <div class="form-group">
+              <label for="name" class="form-label form-label--required">
+                Name:
+              </label>
+      
+              <div class="form-addon" data-states-for="name">
+                <div class="form-addon__addon">
+                  <span class="icon-name"></span>
+                </div>
+      
+                <input type="text"
+                       id="name"
+                       name="name"
+                       class="form-input"
+                       placeholder="Andrew"
+                       required>
+                
+                <span class="form-addon__icon icon-valid"></span>
+                <span class="form-addon__icon icon-invalid"></span>
+              </div>
+      
+              <div data-errors-for="name">
+                <small class="form-error"
+                       data-errors-when="valueMissing">
+                  This field is required.
+                </small>
+              </div>
+            </div>
+      
+            <div class="form-group">
+              <label for="email" class="form-label form-label--required">
+                Email:
+              </label>
+      
+              <div class="form-addon" data-states-for="email">
+                <div class="form-addon__addon">
+                  <span class="icon-email"></span>
+                </div>
+      
+                <input type="email"
+                       id="email"
+                       name="email"
+                       class="form-input"
+                       placeholder="jon@email.com"
+                       required>
+      
+                <span class="form-addon__icon icon-valid"></span>
+                <span class="form-addon__icon icon-invalid"></span>
+              </div>
+      
+              <div data-errors-for="email">
+                <small class="form-error"
+                       data-errors-when="valueMissing">
+                  This field is required.
+                </small>
+                
+                <small class="form-error"
+                       data-errors-when="typeMismatch">
+                  Please enter a valid email address.
+                </small>
+              </div>
+            </div>
+      
+            <div class="form-group">
+              <label for="phone" class="form-label">
+                Phone number:
+              </label>
+      
+              <div class="form-addon" data-states-for="phone">
+                <div class="form-addon__addon">
+                  <span class="icon-phone"></span>
+                </div>
+      
+                <input type="text"
+                       id="phone"
+                       name="phone"
+                       class="form-input"
+                       placeholder="123 456 789"
+                       pattern="[0-9]{3} [0-9]{3} [0-9]{3}">
+      
+                <span class="form-addon__icon icon-valid"></span>
+                <span class="form-addon__icon icon-invalid"></span>
+              </div>
+      
+              <div data-errors-for="phone">
+                <small class="form-error"
+                       data-errors-when="patternMismatch">
+                  Please enter a valid phone number.
+                </small>
+              </div>
+            </div>
+      
+            <div class="form-group">
+              <label for="password" class="form-label form-label--required">
+                Password <span class="text-muted">(minimum 6 characters)</span>:
+              </label>
+      
+              <div class="form-addon" data-states-for="password">
+                <div class="form-addon__addon">
+                  <span class="icon-password"></span>
+                </div>
+      
+                <input type="password"
+                       id="password"
+                       name="password"
+                       class="form-input"
+                       placeholder="********"
+                       minlength="6"
+                       required>
+      
+                <span class="form-addon__icon icon-valid"></span>
+                <span class="form-addon__icon icon-invalid"></span>
+              </div>
+      
+              <div data-errors-for="password">
+                <small class="form-error"
+                       data-errors-when="valueMissing">
+                  This field is required.
+                </small>
+                
+                <small class="form-error"
+                       data-errors-when="tooShort">
+                  Your password should be at least 6 characters long.
+                </small>
+              </div>
+            </div>
+      
+            <div class="form-footer">
+              <button type="submit" class="button">Sign up</button>
+            </div>
+          </form>
+        </section>
+      </main>
+
+
+        <%- include('./partials/_footer.ejs') %>
+</div>

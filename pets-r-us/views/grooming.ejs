@@ -1,0 +1,52 @@
+<!-- ============================================
+; Title:  index.js
+; Author: Professor Krasso
+; Date:   05 February 2023
+; Description: Pets-R-Us dog grooming app
+;=========================================== -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>
+        <%= title %>
+    </title>
+
+    <link rel="stylesheet" href="/styles/site.css">
+
+    <!-- Google fonts for Oswald -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/7e85f88570.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div class="grooming" id="grooming">
+        <%- include('./partials/_header.ejs') %>
+
+            <main id="grooming-container">
+                <img src='https://images.unsplash.com/photo-1554079501-a254f876fc77?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYyNDY0NTMwOQ&ixlib=rb-1.2.1&q=80&w=400'
+                    width="400" height="300" alt=''>
+
+                <p>Pet grooming can also include specialized services, such as teeth cleaning, flea and tick treatments, and paw pad conditioning. Regular grooming not only helps to keep a dog healthy and comfortable, but it can also strengthen the bond between a dog and their owner..</p>
+
+                <img src='https://images.unsplash.com/photo-1581888227599-779811939961?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYyNDY0NTMwOQ&ixlib=rb-1.2.1&q=80&w=400'
+                    width="400" height="300" alt=''>
+
+                <p>Training to become a dog groomer typically involves learning the proper techniques for each aspect of the grooming process, as well as understanding the specific requirements for different breeds. There are several types of dog grooming training programs available, including basic grooming training, advanced grooming training, specialized grooming training, mobile grooming training, and pet first aid and CPR training.!</p>
+
+                <img src='https://images.unsplash.com/photo-1504208434309-cb69f4fe52b0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYyNDY0NTMwOQ&ixlib=rb-1.2.1&q=80&w=400'
+                    width="400" height="300" alt=''>
+
+                <p>The grooming process starts with a thorough brushing to remove loose fur and prevent matting. This is followed by bathing, which involves using a gentle shampoo to clean the fur and skin. Nail trimming is also an important part of the grooming process, as overgrown nails can be uncomfortable and even painful for a dog. Cleaning the ears and trimming the hair around the ears can also prevent infections and keep the dog's ears clean and healthy..</p>
+
+            </main>
+
+            <%- include('./partials/_footer.ejs') %>
+    </div>
+</body>
+
+</html>
