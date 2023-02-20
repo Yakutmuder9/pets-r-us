@@ -1,103 +1,249 @@
-<!-- ============================================
-; Title:  index.js
-; Author: Professor Krasso
-; Date:   05 February 2023
-; Description: Pets-R-Us dog grooming app
-;=========================================== -->
+<!DOCTYPE html>
+<html lang="en">
+  <link rel="stylesheet" href="/styles/site.css" />
+  <!-- Google fonts for Oswald -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+  <script
+    src="https://kit.fontawesome.com/7e85f88570.js"
+    crossorigin="anonymous"
+  ></script>
 
-<head>
-    <meta charset="UTF-8">
-    <title>
-        <%= title %>
-    </title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pits-R-Us</title>
+  </head>
 
-    <link rel="stylesheet" href="/styles/site.css">
+  <body>
+    <div class="landing" id="htmlbody">
+      <%- include('./partials/_header.ejs') %>
 
-    <!-- Google fonts for Oswald -->
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap"
-        rel="stylesheet">
-    <script src="https://kit.fontawesome.com/7e85f88570.js" crossorigin="anonymous"></script>
+      <main>
+        <svg
+          width="1512"
+          height="1739"
+          class="main-shap-svg"
+          viewBox="0 0 1512 1739"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g filter="url(#filter0_b_115_824)">
+            <path
+              d="M1314.5 554.271L1314.5 520.885C1314.5 378.588 1433.01 264.178 1575.27 267.393C1720.58 270.677 1839.76 150.19 1833 5.00036L731 5.00017C638.425 5.00016 563.377 80.0479 563.377 172.624C563.377 265.2 488.329 340.248 395.753 340.248L198 340.248C32.3149 340.248 -102 474.562 -102 640.247L-102 1221.62L-78.239 1490.21C-72.6016 1553.94 -44.2489 1613.52 1.64925 1658.09C169.804 1821.36 451.678 1703.96 454.209 1469.59L458.98 1027.61C460.099 923.945 544.45 840.5 648.117 840.5L1028.27 840.5C1186.35 840.5 1314.5 712.351 1314.5 554.271Z"
+              fill="#2A6374"
+            />
+            <path
+              d="M1314.5 554.271L1314.5 520.885C1314.5 378.588 1433.01 264.178 1575.27 267.393C1720.58 270.677 1839.76 150.19 1833 5.00036L731 5.00017C638.425 5.00016 563.377 80.0479 563.377 172.624C563.377 265.2 488.329 340.248 395.753 340.248L198 340.248C32.3149 340.248 -102 474.562 -102 640.247L-102 1221.62L-78.239 1490.21C-72.6016 1553.94 -44.2489 1613.52 1.64925 1658.09C169.804 1821.36 451.678 1703.96 454.209 1469.59L458.98 1027.61C460.099 923.945 544.45 840.5 648.117 840.5L1028.27 840.5C1186.35 840.5 1314.5 712.351 1314.5 554.271Z"
+              stroke="url(#paint0_linear_115_824)"
+              stroke-opacity="0.6"
+              stroke-width="9"
+            />
+          </g>
+          <defs>
+            <filter
+              id="filter0_b_115_824"
+              x="-226.5"
+              y="-119.5"
+              width="2184.27"
+              height="1977.98"
+              filterUnits="userSpaceOnUse"
+              color-interpolation-filters="sRGB"
+            >
+              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+              <feGaussianBlur in="BackgroundImageFix" stdDeviation="60" />
+              <feComposite
+                in2="SourceAlpha"
+                operator="in"
+                result="effect1_backgroundBlur_115_824"
+              />
+              <feBlend
+                mode="normal"
+                in="SourceGraphic"
+                in2="effect1_backgroundBlur_115_824"
+                result="shape"
+              />
+            </filter>
+            <linearGradient
+              id="paint0_linear_115_824"
+              x1="-539.314"
+              y1="457.796"
+              x2="684.209"
+              y2="76.8835"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop offset="0.193793" stop-color="white" />
+              <stop offset="1" stop-color="white" stop-opacity="0" />
+            </linearGradient>
+          </defs>
+        </svg>
 
-</head>
+        <div class="main-gradinet"></div>
 
-<div class="landing" id="htmlbody">
-    <%- include('./partials/_header.ejs') %>
+        <div class="first-main">
+          <div class="container">
+            <div class="first-main-grid">
+              <div class="main-txt">
+                <h1>
+                  A Pet-First <br />
+                  approach to <br />Wellness
+                </h1>
+                <span class=""> </span>
+                <button>Lets Watch -></button>
+              </div>
 
-        <main>
-            <div class="main-container">
-                <div class="main-page-text-container"></div>
-                <div class="main-page-text">
-                    <div class="IntroTxt" id="IntroTxt">
-                        <div class="IntroName bolder" id="main-bold-text">
-                            <h1>A pet-first <br /> approach to wellness</h1>
-                        </div>
-                        <h5 class="Into-Desc">Welcome to our dog grooming service! We offer professional and
-                            caring
-                            grooming services for your furry friend. From baths and haircuts to nail trims and
-                            ear
-                            cleaning, our experienced groomers will make sure your dog looks and feels their
-                            best.
-                            Schedule an appointment today and treat your furry companion to a spa
-                            day.<span>.</span>
-                        </h5>
-                        <div class="appointment-box">
-                            <input placeholder="Schedule here.." id="appointment-input" />
-                            <button class="projectBtn" href="">Schedule</button>
-                        </div>
-
-
-                    </div>
-                </div>
-                <div class="main-page-image">
-
-                </div>
+              <div class="main-img">
+                <!-- <img src='../images/dog_6.png' alt=''> -->
+                <img src="../images/main1.png" />
+              </div>
             </div>
-
-        </main>
-
-        <div class="landing-feature-container">
-            <h1 class="service-hader">-- Our Services --</h1>
-            <ul class="card-wrapper">
-                <li class="card">
-                    <img src='../images/dog_3.png' alt=''>
-                    <h3><a href="">Basic Grooming</a></h3>
-                    <p>A comprehensive grooming service that includes bathing, brushing, and hair trimming.</p>
-                </li>
-                <li class="card">
-                    <img src='../images/dog_4.png' alt=''>
-                    <h3><a href="">Fur Trimming</a></h3>
-                    <p> A service that focuses on trimming and shaping your dog's fur to enhance its appearance.
-                    </p>
-                </li>
-                <li class="card">
-                    <img src='../images/dog_5.png' alt=''>
-                    <h3><a href=""> Nail Trimming:</a></h3>
-                    <p>A service that involves cutting and filing your dog's nails to keep them at a healthy
-                        length.</p>
-                </li>
-                <li class="card">
-                    <img src='../images/dog_7.png' alt=''>
-                    <h3><a href="">Ear Cleaning:</a></h3>
-                    <p>A service that involves cleaning your dog's ears to prevent infections and other ear
-                        problems.
-                    </p>
-                </li>
-                <li class="card">
-                    <img src='../images/dog_4.png' alt=''>
-                    <h3><a href="">Teeth Brushing</a></h3>
-                    <p> A service that helps maintain your dog's dental hygiene by cleaning its teeth and
-                        removing
-                        plaque.</p>
-                </li>
-                <li class="card">
-                    <img src='../images/dog_6.png' alt=''>
-                    <h3><a href="">Spa Packages</a></h3>
-                    <p>A customizable package of grooming services that includes a combination of the above
-                        services,
-                        plus pampering treatments like massages and aromatherapy.</p>
-                </li>
-            </ul>
+          </div>
         </div>
 
-        <%- include('./partials/_footer.ejs') %>
-</div>
+        <div class="second-main"></div>
+        <div class="second-main-container">
+          <div class="container">
+            <div class="second-view-img">
+              <img src="../images/second-veiw-dog.png" alt="" />
+            </div>
+            <div class="second-view-txt">
+              <h1>Happy Pets</h1>
+              <div class="second-view-card">
+                <h3>Face Trim</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur. Tortor urna
+                  consectetur sed netus duis. Neque viverra quisque consequat in
+                  feugiat.
+                </p>
+                <button></button>
+                <div class="-seond-view-card-contnet">Get Now</div>
+              </div>
+              <div class="second-view-card">
+                <h3>Face Trim</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur. Tortor urna
+                  consectetur sed netus duis. Neque viverra quisque consequat in
+                  feugiat.
+                </p>
+                <button></button>
+                <div class="-seond-view-card-contnet">Get Now</div>
+              </div>
+              <div class="second-view-card">
+                <h3>Face Trim</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur. Tortor urna
+                  consectetur sed netus duis. Neque viverra quisque consequat in
+                  feugiat.
+                </p>
+                <button></button>
+                <div class="-seond-view-card-contnet">Get Now</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="third-main">
+          <div class="thrird-main-img">
+            <img src="../images/snow-dog.png" />
+          </div>
+          <div class="snow-txt">
+            <h1>Your Loved</h1>
+            <img src="../images/paly.png" />
+            <h1>Our Priority</h1>
+          </div>
+        </div>
+
+        <div class="fourth-main">
+          <div class="container">
+            <div class="package-box">
+              <h1>Full Bath & Groom</h1>
+              <p>
+                Lorem ipsum dolor sit amet consectetur. Tortor urna consectetur
+                sed netus duis. Neque viverra quisque consequat in feugiat.
+                Dolor egestas aliquet tempus accumsan . Lorem ipsum dolor sit
+                amet consectetur. Tortor urna consectetur sed netus duis. Neque
+                viverra quisque
+              </p>
+              <h1>$70</h1>
+              <button>Book Now</button>
+            </div>
+
+            <div class="package-box">
+              <div class="package-box-txt"><h1>Packages</h1></div>
+              <h1>Nail & Paw Treatment</h1>
+              <p>
+                Lorem ipsum dolor sit amet consectetur. Tortor urna consectetur
+                sed netus duis. Neque viverra quisque consequat in feugiat.
+                Dolor egestas aliquet tempus accumsan . Lorem ipsum dolor sit
+                amet tempus accumsan .
+              </p>
+              <h1>$60</h1>
+              <button>Book Appointment</button>
+            </div>
+
+            <div class="package-box">
+              <h1>Fluff & Brush</h1>
+              <p>
+                Lorem ipsum dolor sit amet consectetur. Tortor urna consectetur
+                sed netus duis. Neque viverra quisque consequat in feugiat.
+                Dolor egestas aliquet tempus accumsan . Lorem ipsum dolor sit
+                amet constas aliquet tempus accumsan .
+              </p>
+              <h1>$$50</h1>
+              <button>Book Now</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="fivth-main">
+          <div class="container">
+            <h1>
+              “Grooming may seem like a chore, but it's a chance to bond with
+              your pet and show them how much you love them”
+            </h1>
+          </div>
+        </div>
+        <div class="sixth-main">
+          <div class="container">
+            <div class="package-box-txt"><h1>Testimonial</h1></div>
+
+            <div class="testimonial-card-conta">
+              <div class="testimonial-card">
+                <h1>learn about space & planets</h1>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur. Tortor urna
+                  consectetur sed netus duis. Neque viverra quisque consequat in
+                  feugiat. Dolor egestas aliquet tempus accumsan .
+                </p>
+                <button>See More</button>
+              </div>
+              <div class="testimonial-card">
+                <h1>learn about space & planets</h1>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur. Tortor urna
+                  consectetur sed netus duis. Neque viverra quisque consequat in
+                  feugiat. Dolor egestas aliquet tempus accumsan .
+                </p>
+                <button>See More</button>
+              </div>
+              <div class="testimonial-card">
+                <h1>learn about space & planets</h1>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur. Tortor urna
+                  consectetur sed netus duis. Neque viverra quisque consequat in
+                  feugiat. Dolor egestas aliquet tempus accumsan .
+                </p>
+                <button>See More</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <%- include('./partials/_footer.ejs') %>
+    </div>
+  </body>
+</html>

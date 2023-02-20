@@ -71,6 +71,13 @@ app.get("/register", (req, res) => {
   });
 });
 
+app.get("/customers", (req, res) => {
+  res.render("customer-list", {
+    title: "FMS: Customers",
+    cardTitle: "Customers",
+  });
+});
+
 // HTTP POST route to handle the registration form submission
 app.post("/register", async function (req, res) {
   const { name, customerId, email, phone, address, pets } = req.body;
@@ -106,6 +113,19 @@ app.post("/register", async function (req, res) {
     res.status(500);
     throw new Error("Dupplicate Error");
   }
+});
+
+// HTTP GET route to display the customer list EJS page
+app.get("/customers", function (req, res) {
+  Customer.find({}, function (error, customers) {
+    if (error) {
+      console.log(error);
+      res.status(500).send("Error retrieving customers.");
+    } else {
+      console.log(customers);
+      res.render("customer-list", { customers: customers });
+    }
+  });
 });
 
 const PORT = process.env.PORT || 3000;

@@ -4,58 +4,76 @@
 ; Date:   05 February 2023
 ; Description: Pets-R-Us dog grooming app
 ;=========================================== -->
-
-<header class="header">
-    <!-- Top notice bar -->
-    <div class="top-notice">
-        <div class="top-notice-container">
-            <div class="top-notice-left">
-                <label>
-                    <i class="fa fa-clock"></i>
-                    <p>Monday - Sunday</p>
-                </label>
-                <label>
-                    <i class="fa fa-location-arrow"></i>
-                    <p> 123 Stright St., Baltimore MD
-                    </p>
-                </label>
-            </div>
-            <div class="top-notice-right">
-                <ul>
-                    <p>Visit our socials.</p>
-                    <li><a href="https://www.instagram.com/" target="_blank"><i class="fa fa-instagram"></i></a>
-                    </li>
-                    <li><a href="https://www.twitter.com/"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="https://youtube.com/" target="_blank"><i class="fa fa-youtube"></i></a></li>
-                    <li><a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
+<div class="top-notice">
+  <div class="container">
+    <div class="top-notice-left">
+      <ul>
+        <p>Visit our socials.</p>
+        <li>
+          <a href="https://www.instagram.com/" target="_blank"
+            ><i class="fa fa-instagram"></i
+          ></a>
+        </li>
+        <li>
+          <a href="https://www.twitter.com/"><i class="fa fa-twitter"></i></a>
+        </li>
+        <li>
+          <a href="https://youtube.com/" target="_blank"
+            ><i class="fa fa-youtube"></i
+          ></a>
+        </li>
+        <li>
+          <a href="https://www.facebook.com/" target="_blank"
+            ><i class="fa fa-facebook"></i
+          ></a>
+        </li>
+      </ul>
     </div>
-    <!-- main navbar -->
-    <nav id="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <h2>Pets-R-Us</h2>
-            </div>
-            <div class="nav-list-item">
-                <ul>
-                    <li><a href="/" >Service</a>
-                    </li>
-                    <li><a href="grooming">Grooming</a>
-                    </li>
-                    <li><a href="boarding">Boarding</a>
-                    </li>
-                    <li><a href="training">Traning </a>
-                    </li>
-                    <li><a href="register">Register </a>
-                    </li>
-                    <li><button href="./hobby.html" class="call-btn"><i class="fa fa-phone"></i><span>Call
-                                Us</span></button></li>
-                </ul>
-            </div>
+
+    <div class="top-notice-right">
+      <ul>
+        <li><i class="fa fa-location-arrow"></i></li>
+        <li>
+          <p>123 Stright St., Baltimore MD</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<header>
+  <div class="top-navbar">
+    <div class="container">
+      <div class="nav-logo">
+        <a href="/"><h2>Pets-R-Us</h2></a>
+      </div>
+
+      <div class="nav-list-item">
+        <ul>
+          <li class="dropdown">
+            Services
+            <ul>
+              <li><a href="boarding">Boarding</a></li>
+              <li><a href="grooming">Grooming</a></li>
+              <li><a href="training">Traning</a></li>
+            </ul>
+          </li>
+          <li><a href="customers">Customers</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">My Appointment </a></li>
+
+          <li>
+            <a href="register"
+              ><button class="call-btn">
+                <span>Book Apointment</span>
+              </button></a
+            >
+          </li>
+        </ul>
+
+        <div class="hum-burger">
+          <i class="fa fa-bars"></i>
         </div>
-    </nav>
+      </div>
+    </div>
+  </div>
 </header>
