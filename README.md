@@ -1,2 +1,1 @@
-# pets-r-us
-![My Image](home.png)
+![My Image](public/images/home.png)
