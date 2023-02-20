@@ -26,7 +26,7 @@
   <%- include('./partials/_header.ejs') %>
 
   <main>
-    <!-- <div class="main-gradinet"></div> -->
+    
     <svg
       width="1512"
       height="1182"
@@ -156,27 +156,27 @@
     </div>
 
     <div class="second-main">
-      <div class="foot-top-right"  id="main-form-top-cont">
+      <div class="foot-top-right" id="main-form-top-cont">
         <div class="foot-card" id="main-form-card">
           <div class="card-title">
-            <span>
-                <h3>Customer List</h3></span>
+            <span> <h3>Customer List</h3></span>
           </div>
-
-          <div class="email-contnet">
-            <span class="emil-txt">Customer Id:</span>
-            <span class="emil-txt">12345678</span>
+          <% customers.forEach(customer => { %>
+          <div>
+            <div class="email-contnet">
+              <span class="emil-txt">Customer Id:</span>
+              <span class="emil-txt"><%= customer.Id %></span>
+            </div>
+            <div class="email-contnet">
+              <span class="emil-txt">Email:</span>
+              <span class="emil-txt"><%= customer.email %></span>
+            </div>
+            <div class="email-contnet">
+              <span class="emil-txt">Description:</span>
+              <span class="emil-txt"><%= customer.description %></span>
+            </div>
           </div>
-          <div class="email-contnet">
-            <span class="emil-txt">Email:</span>
-            <span class="emil-txt">example.@email.com@:</span>
-            
-          </div>
-          <div class="email-contnet">
-            <span class="emil-txt">Description:</span>
-            <span class="emil-txt">Some text..</span>
-            
-          </div>
+          <% }); %>
         </div>
       </div>
     </div>
