@@ -8,6 +8,7 @@
 */
 
 // Express and Node.js import statements
+require('dotenv').config();
 const express = require("express");
 const path = require("path");
 const Customer = require("./models/customer");
@@ -15,9 +16,8 @@ const app = express();
 const mongoose = require("mongoose");
 
 mongoose.set("strictQuery", false);
-// const url = process.env.DB_CONNECTION
-const url =
-  "mongodb+srv://yakutmuder9:1234@cluster0.jwptk3b.mongodb.net/pets-r-us?retryWrites=true&w=majority";
+const url = process.env.MONGODB_URL;
+
 const connect = mongoose.connect(url, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
