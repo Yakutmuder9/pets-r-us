@@ -85,8 +85,6 @@ app.get("/register", (req, res) => {
 app.get("/appointment", (req, res) => {
   res.render("booking", {
     title: "Appointment",
-    successMessage: null,
-    errorMessage: null,
     services: servicesData.services,
   });
 });
@@ -150,16 +148,9 @@ app.post("/appointments", async (req, res) => {
       email: req.body.email,
       service: req.body.service,
     });
-    appointment
-      .save()
-      .then(() => {
-        successMessage = "Appointment has been scheduled successfully";
-        res.redirect("/");
-      })
-      .catch((err) => {
-        errorMessage = "Failed to schedule appointment";
-        res.redirect("/appointment");
-      });
+    console.log(appointment);
+    await appointment.save();
+    res.redirect("/");
   } catch (err) {
     console.error(err);
     res.redirect("/appointment");
