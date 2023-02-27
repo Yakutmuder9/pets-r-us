@@ -124,34 +124,53 @@
           <div class="testimonial-card">
             <h1>Tips</h1>
 
-
-            <% if (successMessage) { %>
-                <div class="alert alert-success" role="alert">
-                  <%= successMessage %>
-                </div>
-              <% } else if (errorMessage) { %>
-                <div class="alert alert-danger" role="alert">
-                  <%= errorMessage %>
-                </div>
-              <% } %>
             <form action="/appointments" method="POST" class="appointment-form">
-              <label for="firstName">First Name: 
-              <input type="text" id="firstName" name="firstName" required  class="email-input"/> </label>
+              <label for="firstName"
+                >First Name:
+                <input
+                  type="text"
+                  id="firstName"
+                  name="firstName"
+                  required
+                  class="email-input"
+                />
+              </label>
               <br />
-              <label for="lastName">Last Name: 
-              <input type="text" id="lastName" name="lastName" required  class="email-input"/></label>
+              <label for="lastName"
+                >Last Name:
+                <input
+                  type="text"
+                  id="lastName"
+                  name="lastName"
+                  required
+                  class="email-input"
+              /></label>
               <br />
-              <label for="email">Email: 
-              <input type="email" id="email" name="email" required  class="email-input"/></label>
+              <label for="email"
+                >Email:
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  class="email-input"
+              /></label>
               <br />
-              <label for="service">Service: 
-              <select id="service" name="service" required class="email-input">
-                <% for(let i = 0; i < services.length; i++) { %>
-                <option value="<%= services[i].value %>">
-                  <%= services[i].text %>
-                </option>
-                <% } %>
-              </select></label>
+              <label for="service"
+                >Service:
+                <select
+                  id="service"
+                  name="service"
+                  required
+                  class="email-input"
+                >
+                  <% for(let i = 0; i < services.length; i++) { %>
+                  <option value="<%= services[i].value %>">
+                    <%= services[i].text %>
+                  </option>
+                  <% } %>
+                </select></label
+              >
               <br />
               <button type="submit">Submit</button>
             </form>

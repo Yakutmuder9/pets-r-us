@@ -148,11 +148,11 @@ app.post("/appointments", async (req, res) => {
       email: req.body.email,
       service: req.body.service,
     });
-    console.log(appointment);
+    console.log("Appointment successfully saved!", appointment);
     await appointment.save();
     res.redirect("/");
   } catch (err) {
-    console.error(err);
+    console.error("error saving the appointment", err);
     res.redirect("/appointment");
   }
 });
