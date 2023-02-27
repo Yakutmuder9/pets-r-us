@@ -1,19 +1,27 @@
 /*
 ============================================
-; Title:  index.js
+; Title:  Pets-R-Us dog grooming app
 ; Author: Professor Krasso
 ; Date:   28 January 2023
-; Description: Server and route file for hello-world app
+; Modified By: Yakut Ahmedin
+; Description: Pets-R-Us dog grooming app
 ;===========================================
 */
 
 // Express and Node.js import statements
-require('dotenv').config();
+require("dotenv").config();
 const express = require("express");
 const path = require("path");
 const Customer = require("./models/customer");
 const app = express();
 const mongoose = require("mongoose");
+const Appointment = require("./models/appointment");
+const bodyParser = require("body-parser");
+const fs = require("fs");
+
+// Read services.json file
+const rawData = fs.readFileSync("public/data/services.json");
+const servicesData = JSON.parse(rawData);
 
 mongoose.set("strictQuery", false);
 const url = process.env.MONGODB_URL;
@@ -28,6 +36,8 @@ connect.then(
   (err) => console.log(err)
 );
 
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
@@ -71,10 +81,13 @@ app.get("/register", (req, res) => {
   });
 });
 
-app.get("/customers", (req, res) => {
-  res.render("customer-list", {
-    title: "FMS: Customers",
-    cardTitle: "Customers",
+// Render appointment.ejs template and pass servicesData as a variable
+app.get("/appointment", (req, res) => {
+  res.render("booking", {
+    title: "Appointment",
+    successMessage: null,
+    errorMessage: null,
+    services: servicesData.services,
   });
 });
 
@@ -123,9 +136,34 @@ app.get("/customers", function (req, res) {
       res.status(500).send("Error retrieving customers.");
     } else {
       console.log(customers);
-      res.render("customer-list", { customers: customers });
+      res.render("customer-list", { title: "Customers", customers: customers });
     }
   });
+});
+
+app.post("/appointments", async (req, res) => {
+  try {
+    const appointment = new Appointment({
+      userName: req.body.firstName + " " + req.body.lastName,
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
+      email: req.body.email,
+      service: req.body.service,
+    });
+    appointment
+      .save()
+      .then(() => {
+        successMessage = "Appointment has been scheduled successfully";
+        res.redirect("/");
+      })
+      .catch((err) => {
+        errorMessage = "Failed to schedule appointment";
+        res.redirect("/appointment");
+      });
+  } catch (err) {
+    console.error(err);
+    res.redirect("/appointment");
+  }
 });
 
 const PORT = process.env.PORT || 3000;

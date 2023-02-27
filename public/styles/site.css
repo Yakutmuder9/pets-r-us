@@ -601,6 +601,21 @@ main {
     border-radius: 35.7188px;
 }
 
+.single-customers {
+    width: 100%;
+    height: auto;
+    background: #197c9a42;
+    display: flex;
+    flex-direction: column;
+    padding: 1vmin;
+    justify-content: start;
+    text-align: start;
+    border: 1px solid rgb(138, 238, 253);
+    border-radius: 10px;
+    box-shadow: 2px 3px 4px #0b3b49;
+}
+
+
 @media(max-width: 720px) {
     .top-notice-left p {
         display: none;
@@ -618,13 +633,14 @@ main {
 
 /* ---------boarding page start here---------- */
 
-.first-main-shap-svg{
+.first-main-shap-svg {
     width: 100vw;
     top: 40vh;
-    position: absolute!important;
+    position: absolute !important;
     z-index: 12;
     left: 0;
 }
+
 #boarding-first-main {
     width: 100vw;
     height: 100vh;
@@ -632,13 +648,16 @@ main {
     overflow: hidden;
     background: #194340;
 }
-#boarding-first-main .container{
+
+#boarding-first-main .container {
     background: #194340;
 }
-#boarding-first-main .container img{
+
+#boarding-first-main .container img {
     background: #194340;
     background: linear-gradient(89.77deg, #194340 0.11%, #194340 0.12%, #2A6374 30.4%, rgba(0, 0, 0, 0) 70.71%, #194340 90.96%);
 }
+
 .boarding-first-main-box {
     position: absolute;
     width: 100%;
@@ -646,31 +665,53 @@ main {
     background: linear-gradient(89.77deg, #194340 0.11%, #194340 0.12%, #2A6374 30.4%, rgba(0, 0, 0, 0) 70.71%, #194340 90.96%);
 }
 
-.boarding-main-txt{
+.boarding-main-txt {
     z-index: 20;
     color: var(--white-ash);
 }
-.boarding-main-txt h1{
+
+.boarding-main-txt h1 {
     position: absolute;
     transform: translateY(-35vh);
     font-size: 60px;
 }
-.boarding-main-txt p{
+
+.boarding-main-txt p {
     position: absolute;
     font-size: 20px;
 }
 
-#second-bording-main{
+#second-bording-main {
     z-index: 12;
 }
-#main-form-card, #main-form-top-cont {
-    width:90%;
+
+#main-form-card,
+#main-form-top-cont {
+    width: 90%;
 }
 
+/* ----------Apointmet- form -view-start-here------- */
+.appointment-form {
+    width: 100%;
+    height: auto;
+    display: flex;
+    padding: 2vmin;
+    justify-content: space-around;
+    align-items: first baseline;
+    flex-direction: column;
+}
 
+.appointment-form label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin: 2vmin 3vmin;
+}
 
-
-
+.appointment-form label button{
+    width: 100%;
+}
 
 
 

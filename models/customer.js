@@ -1,31 +1,25 @@
+// ============================================
+// ; Title:  Pets-R-Us dog grooming app
+// ; Author: Professor Krasso
+// ; Date:   05 February 2023
+// ; Modified By: Yakut Ahmedin
+// ; Description: Pets-R-Us dog grooming app
+// ;===========================================
 const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 
-const customerSchema = new mongoose.Schema({
-    name: { type: String, required: true },
-    customerId: { type: Number, unique: true, required: true },
-    email: { type: String, unique: true, required: true },
-    phone: { type: String, required: true },
-    address: {
-        street: { type: String, required: true },
-        city: { type: String, required: true },
-        state: { type: String, required: true },
-        zip: { type: String, required: true }
-    },
-    pets: [
-        {
-            name: { type: String, required: true },
-            breed: { type: String, required: true },
-            age: { type: Number, required: true },
-            lastVisit: { type: Date, default: Date.now },
-            discription: { type: String }
-        }
-    ],
-    createdAt: { type: Date, default: Date.now },
-    updatedAt: { type: Date, default: Date.now }
-},
-    { timestamps: true }
-);
+const customerSchema = new Schema({
+  customerId: {
+    type: Number,
+    unique: true,
+    required: true,
+  },
+  email: {
+    type: String,
+    unique: true,
+    required: true,
+  },
+});
 
-const Customer = mongoose.model("Customer", customerSchema);
+const Customer = mongoose.model("Customers", customerSchema);
 module.exports = Customer;
-
