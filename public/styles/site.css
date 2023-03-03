@@ -709,7 +709,7 @@ main {
     margin: 2vmin 3vmin;
 }
 
-.appointment-form label button{
+.appointment-form label button {
     width: 100%;
 }
 
@@ -717,6 +717,82 @@ main {
 
 
 
+/*---------------------------My appointments---------------------*/
+
+/* week-4 Additional Styling Requirements style */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: var(--casal);
+    color: var(--white-ash);
+}
+
+table td,
+th {
+    border: 1px solid #ddd;
+    text-align: left;
+    padding: 8px;
+    font-size: 14px;
+}
+
+.table-hover,
+tr:hover {
+    background-color: #6fc6e0b3;
+    color: #023a8d;
+    cursor: pointer;
+}
+
+.my-appointment-form button {
+    background: var(--casal);
+    color: var(--white-ash);
+    margin-top: 8%;
+    margin-left: 12%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: #03505e;
+    font-size: 18px;
+    font-weight: 400;
+    cursor: pointer;
+    box-shadow: 1px 2px 3px black;
+}
+.my-appointment-form button:hover {
+    background: #033a44c1;
+    transition: .1s ease-in-out;
+    box-shadow: 3px 6px 9px rgb(37, 100, 142);
+}
+#appointment-results td::first-letter {
+    text-transform: uppercase;
+}
+#appointment-results td:nth-child(3)::first-letter{
+    text-transform: none;
+}
+#customerId-message,
+#email-message{
+    width: 100%;
+    margin-top: 10px;
+    color: rgb(255, 21, 0);
+}
+
+#registration-form .email-contnet {
+    display: flex;
+    flex-direction: column;
+}
+.email-contnet label{
+    display: flex;
+    justify-content: space-between;
+    white-space: nowrap;
+}
+.testimonial-card {
+    width: 50vw;
+}
 /*---------------------------Footer---------------------*/
 footer {
     width: 100%;
@@ -753,7 +829,6 @@ footer {
     bottom: 0;
     backdrop-filter: blur(60px);
     background: linear-gradient(129.55deg, rgba(235, 235, 235, 0.175) 1.44%, rgba(255, 255, 255, 0.346766) 1.44%, rgba(116, 209, 237, 0.5) 47.72%, rgba(0, 0, 0, 0.5) 119.73%);
-    /* clip-path: polygon(0% 40%, 0% 100%, 80% 100%, 80% 60%, 100% 60%, 100% 0%, 25% 0%, 25% 40%); */
     clip-path: inset(10% 10% 10% 5% round 50px 20px 80px 40px);
     -webkit-clip-path: inset(5% 5% 0% 5% round 50px 20px 80px 40px);
     padding: 50px 50px 50px 50px;
@@ -882,11 +957,11 @@ footer {
 
 .email-input {
     width: 62%;
-    border: 1.7999999523162842px solid linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.016129031777381897));
     border-radius: 20px;
-    padding: 1.4vmin 3vmin;
+    padding: 1.6vmin 3vmin;
     margin-left: 10px;
-    border: #675055;
+    background: #80c5f340;
+    border: 1px solid #03505e;
 }
 
 .contact-btn {

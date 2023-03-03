@@ -26,86 +26,13 @@
   <%- include('./partials/_header.ejs') %>
 
   <main>
-    
-    <svg
-      width="1512"
-      height="1182"
-      class="first-main-shap-svg"
-      viewBox="0 0 1512 1182"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <g filter="url(#filter0_b_148_169)">
-        <path
-          d="M-705.308 31.0085L-705.039 5L817.503 20.7564C899.58 21.6058 965.429 88.8313 964.579 170.909C963.73 252.986 1029.58 320.211 1111.66 321.061L1538.87 325.482C1704.54 327.196 1837.46 462.894 1835.75 628.57L1830.76 1110.01C1826.15 1148.52 1793.49 1177.5 1754.7 1177.5L1180.16 1177.5C1029.05 1177.5 907.791 1052.67 912.185 901.616C913.993 839.477 864.457 787.949 802.295 787.306L369.438 782.826C245.094 781.539 142.972 684.207 135.717 560.068C128.462 435.929 26.3393 338.596 -98.0047 337.31L-408.429 334.097C-574.105 332.382 -707.023 196.685 -705.308 31.0085Z"
-          fill="url(#paint0_linear_148_169)"
-          fill-opacity="0.5"
-        />
-        <path
-          d="M-705.308 31.0085L-705.039 5L817.503 20.7564C899.58 21.6058 965.429 88.8313 964.579 170.909C963.73 252.986 1029.58 320.211 1111.66 321.061L1538.87 325.482C1704.54 327.196 1837.46 462.894 1835.75 628.57L1830.76 1110.01C1826.15 1148.52 1793.49 1177.5 1754.7 1177.5L1180.16 1177.5C1029.05 1177.5 907.791 1052.67 912.185 901.616C913.993 839.477 864.457 787.949 802.295 787.306L369.438 782.826C245.094 781.539 142.972 684.207 135.717 560.068C128.462 435.929 26.3393 338.596 -98.0047 337.31L-408.429 334.097C-574.105 332.382 -707.023 196.685 -705.308 31.0085Z"
-          stroke="url(#paint1_linear_148_169)"
-          stroke-opacity="0.6"
-          stroke-width="9"
-        />
-      </g>
-      <defs>
-        <filter
-          id="filter0_b_148_169"
-          x="-829.824"
-          y="-119.546"
-          width="2790.09"
-          height="1421.55"
-          filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
-        >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
-          <feGaussianBlur in="BackgroundImageFix" stdDeviation="60" />
-          <feComposite
-            in2="SourceAlpha"
-            operator="in"
-            result="effect1_backgroundBlur_148_169"
-          />
-          <feBlend
-            mode="normal"
-            in="SourceGraphic"
-            in2="effect1_backgroundBlur_148_169"
-            result="shape"
-          />
-        </filter>
-        <linearGradient
-          id="paint0_linear_148_169"
-          x1="-638.193"
-          y1="5.69174"
-          x2="620.617"
-          y2="2354.23"
-          gradientUnits="userSpaceOnUse"
-        >
-          <stop stop-color="#EBEBEB" stop-opacity="0.35" />
-          <stop stop-color="white" stop-opacity="0.693532" />
-          <stop offset="0.388975" stop-color="#74D1ED" />
-          <stop offset="0.994177" />
-        </linearGradient>
-        <linearGradient
-          id="paint1_linear_148_169"
-          x1="2413.39"
-          y1="438.761"
-          x2="964.747"
-          y2="-249.085"
-          gradientUnits="userSpaceOnUse"
-        >
-          <stop offset="0.193793" stop-color="white" />
-          <stop offset="1" stop-color="white" stop-opacity="0" />
-        </linearGradient>
-      </defs>
-    </svg>
-
     <div class="first-main" id="boarding-first-main">
       <div class="container">
         <div class="boarding-first-main-box"></div>
         <div class="boarding-main-txt">
           <h1>
             Welcome to our <br />
-            boarding dogs menu!
+            Customers Page!
           </h1>
 
           <p>
@@ -125,41 +52,26 @@
 
         <div class="testimonial-card-conta">
           <div class="testimonial-card">
-            <% customers.forEach(customer => { %>
-              <div class="single-customers">
-                <div class="customer-id">
-                  <span class="emil-txt">Customer Id:</span>
-                  <span class="emil-txt"><%= customer.customerId %></span>
-                </div>
-                <div class="customer-email">
-                  <span class="emil-txt">Email:</span>
-                  <span class="emil-txt"><%= customer.email %></span>
-                </div>
-              </div>
-              <% }); %>
-          </div>
-        </div>
-      </div>
-    </div>
+            <table id="bookTable" class="table">
+              <thead>
+                <tr>
+                  <th>No.</th>
+                  <th>Customer Id</th>
+                  <th>Email</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% customers.forEach((customer, i) => { %>
+                <tr>
+                  <td><%= i + 1 %></td>
+                  <td><%= customer.customerId %></td>
+                  <td><%= customer.email %></td>
+                </tr>
+                <% }); %>
+              </tbody>
+            </table>
 
-    <div class="second-main">
-      <div class="foot-top-right" id="main-form-top-cont">
-        <div class="foot-card" id="main-form-card">
-          <div class="card-title">
-            <span> <h3>Customer List</h3></span>
           </div>
-          <% customers.forEach(customer => { %>
-          <div>
-            <div class="email-contnet">
-              <span class="emil-txt">Customer Id:</span>
-              <span class="emil-txt"><%= customer.Id %></span>
-            </div>
-            <div class="email-contnet">
-              <span class="emil-txt">Email:</span>
-              <span class="emil-txt"><%= customer.email %></span>
-            </div>
-          </div>
-          <% }); %>
         </div>
       </div>
     </div>

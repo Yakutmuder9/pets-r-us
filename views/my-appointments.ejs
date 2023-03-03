@@ -1,0 +1,100 @@
+<!-- ============================================
+; Title:  Pets-R-Us dog grooming app
+; Author: Professor Krasso
+; Date:   03 March 2023
+; Modified By: Yakut Ahmedin
+; Description: Pets-R-Us dog grooming app
+;=========================================== -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <link rel="stylesheet" href="/styles/site.css" />
+  <!-- Google fonts for Oswald -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+  <script
+    src="https://kit.fontawesome.com/7e85f88570.js"
+    crossorigin="anonymous"
+  ></script>
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pits-R-Us</title>
+  </head>
+
+  <body>
+    <div class="landing" id="htmlbody">
+      <%- include('./partials/_header.ejs') %>
+
+      <main>
+        <div class="fivth-main">
+          <div class="container">
+            <h1>
+              “Grooming may seem like a chore, but it's a chance to bond with
+              your pet and show them how much you love them”
+            </h1>
+          </div>
+        </div>
+        <div class="sixth-main">
+          <div class="container">
+            <div class="package-box-txt"><h1>My Appointments</h1></div>
+            <div class="testimonial-card-conta"></div>
+            
+            <div class="testimonial-card-conta">
+              <div class="testimonial-card">
+                <!-- Appointment Lookup Form -->
+                <form class="my-appointment-form">
+                  <label for="email">Email Address:</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    class="email-input"
+                    required
+                  />
+                  <label for="submit"> </label>
+                  <button type="button" name="submit" onclick="lookupAppointment()">
+                    Lookup Appointment
+                  </button>
+                </form>
+
+                <!-- Appointment Results -->
+                <div id="appointment-results">
+                  <!-- Use JavaScript's fetch() API to populate this div with appointment data -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <%- include('./partials/_footer.ejs') %>
+    </div>
+
+    <script>
+      function lookupAppointment() {
+        const email = document.getElementById("email").value;
+        fetch(`/api/appointments?email=${email}`)
+          .then((response) => response.json())
+          .then((data) => {
+            console.log(data);
+            // creates an HTML table with book details
+            let tableData = "";
+            if (data._id) {
+              tableData += `<table id="bookTable" class="table"> <thead><tr>  <th>First Name</th> <th>Last Name</th> <th>Email</th> <th>Service</th> </tr></thead> <tbody> <td>${data.firstName}</td> <td>${data.lastName}</td> <td>${data.email}</td> <td>${data.service}</td> </tbody></table>`;
+            } else {
+              tableData += "<p>No appointments found.</p>";
+            }
+
+            document.getElementById("appointment-results").innerHTML =
+              tableData;
+          })
+          .catch((error) => console.error(error));
+      }
+    </script>
+  </body>
+</html>

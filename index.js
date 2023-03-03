@@ -26,6 +26,7 @@ const servicesData = JSON.parse(rawData);
 mongoose.set("strictQuery", false);
 const url = process.env.MONGODB_URL;
 
+// connect mongoDB url
 const connect = mongoose.connect(url, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -43,6 +44,7 @@ app.set("view engine", "ejs");
 
 app.use(express.static(path.join(__dirname, "public")));
 
+// Render index.ejs template
 app.get("/", (req, res) => {
   res.render("index", {
     title: "FMS: Landing",
@@ -50,6 +52,7 @@ app.get("/", (req, res) => {
   });
 });
 
+// Render boarding.ejs template
 app.get("/grooming", (req, res) => {
   res.render("grooming", {
     title: "FMS: About",
@@ -57,6 +60,7 @@ app.get("/grooming", (req, res) => {
   });
 });
 
+// Render boarding.ejs template
 app.get("/boarding", (req, res) => {
   res.render("boarding", {
     title: "FMS: Boarding",
@@ -65,6 +69,7 @@ app.get("/boarding", (req, res) => {
   });
 });
 
+// Render training.ejs template
 app.get("/training", (req, res) => {
   res.render("training", {
     title: "FMS: Training",
@@ -73,6 +78,7 @@ app.get("/training", (req, res) => {
   });
 });
 
+// Render register.ejs template
 app.get("/register", (req, res) => {
   res.render("register", {
     title: "FMS: Register",
@@ -89,40 +95,70 @@ app.get("/appointment", (req, res) => {
   });
 });
 
+// HTTP GET route to display an appointment on EJS page
+app.get("/my-appointments", (req, res) => {
+  res.render("my-appointments", {
+    title: "My Appointments",
+    services: servicesData.services,
+  });
+});
+
 // HTTP POST route to handle the registration form submission
-app.post("/register", async function (req, res) {
-  const { name, customerId, email, phone, address, pets } = req.body;
-  // Validation
-  if (!name || !customerId || !email || !phone || !address || !pets) {
-    res.status(400);
-    throw new Error("Please fill in all fields");
-  }
+// app.post("/register", function (req, res) {
+//   const { customerId, email } = req.body;
+
+//   // Validation
+//   if (!customerId || !email) {
+//     res.status(400);
+//     throw new Error("Please fill in all fields");
+//   }
+
+//   try {
+//     const newCustomer = new Customer({
+//       customerId: customerId,
+//       email: email,
+//     });
+
+//     Customer.create(newCustomer, function (error, customer) {
+//       if (error) {
+//         console.log(error);
+//         res.render("register.ejs", { error: error });
+//       } else {
+//         console.log("Customer added successfully: ", customer);
+//         res.redirect("/");
+//       }
+//     });
+//   } catch (error) {
+//     res.status(500);
+//     throw new Error("Dupplicate Error");
+//   }
+// });
+
+app.post("/register", async (req, res) => {
+  const { customerId, email } = req.body;
 
   try {
-    const newCustomer = new Customer({
-      name: name,
-      customerId: customerId,
-      email: email,
-      phone: phone,
-      address: address,
-      pets: pets,
+    // Check if customer already exists in database
+    const existingCustomer = await Customer.findOne({
+      $or: [{ customerId }, { email }],
     });
 
-    Customer.create(
-      newCustomer,
-      await function (error, customer) {
-        if (error) {
-          console.log(error);
-          res.render("register.ejs", { error: error });
-        } else {
-          console.log("Customer added successfully: ", customer);
-          res.redirect("/");
-        }
-      }
-    );
-  } catch (error) {
-    res.status(500);
-    throw new Error("Dupplicate Error");
+    if (existingCustomer) {
+      // Customer already exists
+      res.send("Customer already exists");
+    } else {
+      // Add new customer to database
+      const newCustomer = new Customer({
+        customerId: customerId,
+        email: email,
+      });
+
+      await newCustomer.save();
+      res.status(200).send("Registered successfully");
+    }
+  } catch (err) {
+    console.error("Error:", err);
+    res.status(500).send("Internal server error", { error: err });
   }
 });
 
@@ -133,12 +169,12 @@ app.get("/customers", function (req, res) {
       console.log(error);
       res.status(500).send("Error retrieving customers.");
     } else {
-      console.log(customers);
       res.render("customer-list", { title: "Customers", customers: customers });
     }
   });
 });
 
+//  HTTP GET route to display an appointment on EJS page
 app.post("/appointments", async (req, res) => {
   try {
     const appointment = new Appointment({
@@ -155,6 +191,23 @@ app.post("/appointments", async (req, res) => {
     console.error("error saving the appointment", err);
     res.redirect("/appointment");
   }
+});
+
+//  HTTP GET route to display facthed list of customer appointment on EJS page
+app.get("/api/appointments", (req, res) => {
+  const email = req.query.email;
+
+  Appointment.findOne({ email: email }, (err, appointment) => {
+    if (err) {
+      console.error(err);
+    } else {
+      if (appointment) {
+        res.json(appointment);
+      } else {
+        res.json(`The email ${email} was not found in the database.`);
+      }
+    }
+  });
 });
 
 const PORT = process.env.PORT || 3000;
