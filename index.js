@@ -104,36 +104,6 @@ app.get("/my-appointments", (req, res) => {
 });
 
 // HTTP POST route to handle the registration form submission
-// app.post("/register", function (req, res) {
-//   const { customerId, email } = req.body;
-
-//   // Validation
-//   if (!customerId || !email) {
-//     res.status(400);
-//     throw new Error("Please fill in all fields");
-//   }
-
-//   try {
-//     const newCustomer = new Customer({
-//       customerId: customerId,
-//       email: email,
-//     });
-
-//     Customer.create(newCustomer, function (error, customer) {
-//       if (error) {
-//         console.log(error);
-//         res.render("register.ejs", { error: error });
-//       } else {
-//         console.log("Customer added successfully: ", customer);
-//         res.redirect("/");
-//       }
-//     });
-//   } catch (error) {
-//     res.status(500);
-//     throw new Error("Dupplicate Error");
-//   }
-// });
-
 app.post("/register", async (req, res) => {
   const { customerId, email } = req.body;
 
